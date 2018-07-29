@@ -24,7 +24,7 @@ namespace DialogFlow.Models
             contexts = request.Contexts;
             query = request.Query;
             lang = "es-ES";
-            sessionId = "123456";
+            sessionId = request.ID;
             timezone = "Bolivia/Santa_Cruz";
         }
 

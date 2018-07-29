@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.3.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
     </Reference>
@@ -159,10 +165,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Acciones\ManejoDeInfo.cs" />
     <Compile Include="Models\Acciones\MensajesTexto.cs" />
     <Compile Include="Models\FbBotData\FbBotData.cs" />
     <Compile Include="Models\FbBotData\FbUser.cs" />
     <Compile Include="Models\Hub\Usuario.cs" />
+    <Compile Include="Models\Tabloides\Contexto.cs" />
+    <Compile Include="Models\Tabloides\Enrutamiento.cs" />
+    <Compile Include="Models\Tabloides\Solicitudes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -186,6 +196,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\FbConnect\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DialogFlow\DialogFlow.csproj">
+      <Project>{b5fa437f-ae21-435b-9245-645ad89b5947}</Project>
+      <Name>DialogFlow</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
