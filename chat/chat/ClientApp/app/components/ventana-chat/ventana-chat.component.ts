@@ -16,7 +16,7 @@ export class VentanaChatComponent implements OnInit {
       this.signalRservice.YaConecto.subscribe(() => {
           this.http.get("/home/getCosa").subscribe((a: any) => {
               this.signalRservice.mandarIdAuth(a._body);
-              console.log("CUACK");
+              console.log(a._body);
           });
       });
    
