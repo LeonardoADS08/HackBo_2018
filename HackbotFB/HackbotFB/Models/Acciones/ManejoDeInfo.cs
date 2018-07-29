@@ -1,4 +1,5 @@
 ﻿using HackbotFB.Models.Tabloides;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +70,7 @@ namespace HackbotFB.Models.Acciones
             }
         }
 
-        public static void RegistrarSolicitud(Dictionary<string,string> entidades,string FacebookId)
+        public static string RegistrarSolicitud(Dictionary<string,string> entidades,string FacebookId)
         {
             DateTime ahora = DateTime.Now;
             Solicitudes nueva = new Solicitudes()
@@ -92,6 +93,8 @@ namespace HackbotFB.Models.Acciones
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+
+            return JsonConvert.SerializeObject(nueva);
         }
 
         public static string ObtenerRuta(string FacebookId)
@@ -101,6 +104,7 @@ namespace HackbotFB.Models.Acciones
             {
                 agente = db.Rutas.FirstOrDefault(x => x.FacebookId == FacebookId).AgenteId;
             }
+            agente.Replace("////", "//");
             return agente;
         }
     }

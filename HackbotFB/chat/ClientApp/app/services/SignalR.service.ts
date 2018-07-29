@@ -7,6 +7,7 @@ declare var $: any;
 export class SignalRService {
     llegoMensaje: EventEmitter<any>=new EventEmitter<any>();
     conexion: any;
+    DesconectarCliente: EventEmitter<any> = new EventEmitter<any>();
     YaConecto: EventEmitter<any> = new EventEmitter<any>();
     constructor() {
 
@@ -36,5 +37,8 @@ export class SignalRService {
     }
     pararSignal() {
         $.connection.hub.stop();
+    }
+    DesconectarClienteM(id:string) {
+        this.conexion.invoke("DesconexionCliente",id);
     }
 }

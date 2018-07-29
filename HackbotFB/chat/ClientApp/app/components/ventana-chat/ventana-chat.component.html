@@ -11,5 +11,8 @@
 </ng-container>
     
 </div>
-<input #mensajeAenviar style="width:90vh"/>
-<button style="width:10vh" (click)="EnviarMensaje(mensajeAenviar,contenedor)">enviar</button>
+<ng-container *ngIf="mensajesService.personaSeleccionada">
+    <input #mensajeAenviar style="width:90vh" />
+    <button style="width:10vh" (click)="EnviarMensaje(mensajeAenviar,contenedor)">enviar</button>
+    <button (click)="DesconectarCliente()"> Desconectar</button>
+</ng-container>

@@ -61,7 +61,16 @@ namespace HackbotFB.Controllers
                             if (!respuesta.result.actionIncomplete)
                             {
                                 ManejoDeInfo.VerificarRuta(message.sender.id);
-                                ManejoDeInfo.RegistrarSolicitud(respuesta.result.parameters, message.sender.id);
+                                string mensaje=ManejoDeInfo.RegistrarSolicitud(respuesta.result.parameters, message.sender.id);
+                                var hubContext = GlobalHost.ConnectionManager.GetHubContext<ChatHub>();
+                                string ruta = ManejoDeInfo.ObtenerRuta(message.sender.id);
+                                if (ChatHub.lista.Count > 0)
+                                {
+                                    UsuarioConectado jarcodeo = ChatHub.lista.FirstOrDefault(x => x.id == ruta);
+                                    FbUser usuario = Acciones.recuperarContacto(message.sender.id);
+                                    hubContext.Clients.Client(jarcodeo.connectionId).recibirMensaje(mensaje, usuario.first_name + " " + usuario.last_name, message.sender.id);
+
+                                }
                             }
                             Acciones.EnviarMensajeTextoAsync(nuevo);
                         }
@@ -76,9 +85,13 @@ namespace HackbotFB.Controllers
                                 //servicios.LlamarPost<dynamic>("http://localhost:61627/api/Message/Mensaje", message);
                                 var hubContext = GlobalHost.ConnectionManager.GetHubContext<ChatHub>();
                                 string ruta = ManejoDeInfo.ObtenerRuta(message.sender.id);
-                                UsuarioConectado jarcodeo = ChatHub.lista.FirstOrDefault(x => x.id == ruta);
-                                FbUser usuario = Acciones.recuperarContacto(message.sender.id);
-                                hubContext.Clients.Client(jarcodeo.connectionId).recibirMensaje(message.message.text, usuario.first_name + " " + usuario.last_name, message.sender.id);
+                                if (ChatHub.lista.Count > 0)
+                                {
+                                    UsuarioConectado jarcodeo = ChatHub.lista.FirstOrDefault(x => x.id == ruta);
+                                    FbUser usuario = Acciones.recuperarContacto(message.sender.id);
+                                    hubContext.Clients.Client(jarcodeo.connectionId).recibirMensaje(message.message.text, usuario.first_name + " " + usuario.last_name, message.sender.id);
+
+                                }
 
                             });
                         }

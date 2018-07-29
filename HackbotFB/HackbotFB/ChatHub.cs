@@ -33,6 +33,10 @@ namespace HackbotFB
         {
             var beee = Context.ConnectionId;
         }
+        public void DesconexionCliente(string idFacebook)
+        {
+            ManejoDeInfo.Desconectar(idFacebook);
+        }
         public void RecibirConexion(string Id)
         {
             UsuarioConectado enLista = lista.FirstOrDefault(x => x.id == Id);

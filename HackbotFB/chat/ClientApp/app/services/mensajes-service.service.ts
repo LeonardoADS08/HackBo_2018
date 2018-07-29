@@ -4,7 +4,7 @@ import {Mensaje} from '../clases/Mensaje';
 import {Persona} from '../clases/Persona';
 @Injectable()
 export class MensajesServiceService {
-  personaSeleccionada:MensajesDePersona;
+  personaSeleccionada?:MensajesDePersona;
   listaMensajes:Array<MensajesDePersona>;
   constructor() {
     let i;

@@ -16,7 +16,7 @@ export class VentanaChatComponent implements OnInit {
       this.signalRservice.YaConecto.subscribe(() => {
           this.http.get("/home/getCosa").subscribe((a: any) => {
               this.signalRservice.mandarIdAuth(a._body);
-              console.log("CUACK");
+              console.log(a._body);
           });
       });
    
@@ -54,15 +54,37 @@ export class VentanaChatComponent implements OnInit {
      console.log(mensaje.value);
     if(mensaje.value!="")
     {
-      this.mensajesService.personaSeleccionada.Mensajes.push({texto:mensaje.value,tipo:'enviado'})
-        console.log(this.mensajesService.personaSeleccionada);
-        this.signalRservice.mandarAlgo(this.mensajesService.personaSeleccionada.persona.conexion, mensaje.value);
+        if (this.mensajesService.personaSeleccionada) {
+            this.mensajesService.personaSeleccionada.Mensajes.push({ texto: mensaje.value, tipo: 'enviado' })
+            console.log(this.mensajesService.personaSeleccionada);
+            this.signalRservice.mandarAlgo(this.mensajesService.personaSeleccionada.persona.conexion, mensaje.value);
+
+        }
+ 
 
     }
    
        e.scrollTop = e.scrollHeight; //- e.getBoundingClientRect().height;
         mensaje.value = "";
         
+    }
+    DesconectarCliente() {
+        if (this.mensajesService.personaSeleccionada) {
+            this.signalRservice.DesconectarClienteM(this.mensajesService.personaSeleccionada.persona.conexion);
+            const index: number = this.mensajesService.listaMensajes.indexOf(this.mensajesService.personaSeleccionada);
+            if (index !== -1) {
+                this.mensajesService.listaMensajes.splice(index, 1);
+            }
+            if (this.mensajesService.listaMensajes.length == 0) {
+                this.mensajesService.personaSeleccionada = undefined;
+            }
+            else {
+                this.mensajesService.personaSeleccionada = this.mensajesService.listaMensajes[0];
+            }
+
+        }
+        
+
     }
   ngOnInit() {
   }
