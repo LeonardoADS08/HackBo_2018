@@ -18,6 +18,33 @@ namespace HackbotFB.Models.Acciones
             return resultado;
         }
 
+        public static bool VerificarRuta(string FacebookId)
+        {
+            Enrutamiento ruta = new Enrutamiento();
+            bool resultado = false;
+            using (var db = new Contexto())
+            {
+                ruta = db.Rutas.FirstOrDefault(x => x.FacebookId == FacebookId);
+                if (ruta != null)
+                {
+                    resultado = false;
+                }
+                else
+                {
+                    ruta = new Enrutamiento();
+                    ruta.FacebookId = FacebookId;
+                    ruta.Nombre = "";
+                    ruta.Tipo = "Tipo3";
+                    ruta.Conectividad = false;
+                    db.Rutas.Add(ruta);
+                }
+                db.SaveChanges();
+                resultado = true;
+                
+            }
+            return resultado;
+        }
+
         public static void Conectar(string FacebookId)
         {
             Enrutamiento ruta = new Enrutamiento();
@@ -52,8 +79,29 @@ namespace HackbotFB.Models.Acciones
                 FacebookId = FacebookId,
                 TipoCredito = entidades["Creditos"],
                 Ingreso = entidades["Ingreso"],
-                Monto = entidades["Monto"]
+                Monto = entidades["Monto"],
+                ESTADO="PENDIENTE"
             };
+            Enrutamiento item = new Enrutamiento();
+
+            using(var db=new Contexto())
+            {
+                db.Sol.Add(nueva);
+                item=db.Rutas.FirstOrDefault(x => x.FacebookId == FacebookId);
+                item.Conectividad = true;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public static string ObtenerRuta(string FacebookId)
+        {
+            string agente = string.Empty;
+            using(var db=new Contexto())
+            {
+                agente = db.Rutas.FirstOrDefault(x => x.FacebookId == FacebookId).AgenteId;
+            }
+            return agente;
         }
     }
 }
