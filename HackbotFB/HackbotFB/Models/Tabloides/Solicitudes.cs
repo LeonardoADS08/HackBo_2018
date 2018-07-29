@@ -24,5 +24,12 @@ namespace HackbotFB.Models.Tabloides
         public string Ingreso { get; set; }
 
         public DateTime FechaRecepcion { get; set; }
+
+        public string ESTADO { get; set; }
+
+        public Solicitudes()
+        {
+            ESTADO = "PENDIENTE";
+        }
     }
 }
