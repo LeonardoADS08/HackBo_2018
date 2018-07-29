@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackbotFB", "HackbotFB\Hack
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackbotDialogflow", "HackbotDialogflow\HackbotDialogflow.csproj", "{50A24909-55B8-48FA-8530-209FC7D2E3F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogFlow", "DialogFlow\DialogFlow.csproj", "{B5FA437F-AE21-435B-9245-645AD89B5947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5FA437F-AE21-435B-9245-645AD89B5947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5FA437F-AE21-435B-9245-645AD89B5947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5FA437F-AE21-435B-9245-645AD89B5947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5FA437F-AE21-435B-9245-645AD89B5947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
