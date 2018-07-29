@@ -19,5 +19,9 @@ namespace chat.Controllers
             ViewData["RequestId"] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
             return View();
         }
+        public string getCosa()
+        {
+            return HttpContext.User.Identity.Name;
+        }
     }
 }

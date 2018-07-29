@@ -50,7 +50,8 @@ namespace HackbotFB.Controllers
                         Acciones.PostRaw("https://graph.facebook.com/v3.0/me/messages?access_token=EAAF3NCI0yUQBAMx3ZCirrlZCuYDNoLaD092M4ncaZAYmu03C5Rku5tCPFLZBqmh2LEjD03u6fZAw3NtLhJLO7WEiJuHZCOFSmbEiZAR1DsiZAZBEWdQ9qizdz0HDJCQeH1wZBhG4HVxKddyTtyKxaMBSZCnoXeSCJY4AARmf6C1wmyIOAZDZD", json);
                         Task.Factory.StartNew(() =>
                         {
-                            servicios.LlamarPost<dynamic>("http://localhost:61627/api/Message/Mensaje", message);
+                            //servicios.LlamarPost<dynamic>("http://localhost:61627/api/Message/Mensaje", message);
+
                         });
                     }
                 }
