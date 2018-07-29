@@ -93,5 +93,15 @@ namespace HackbotFB.Models.Acciones
                 db.SaveChanges();
             }
         }
+
+        public static string ObtenerRuta(string FacebookId)
+        {
+            string agente = string.Empty;
+            using(var db=new Contexto())
+            {
+                agente = db.Rutas.FirstOrDefault(x => x.FacebookId == FacebookId).AgenteId;
+            }
+            return agente;
+        }
     }
 }

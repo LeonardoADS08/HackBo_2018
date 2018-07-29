@@ -75,7 +75,8 @@ namespace HackbotFB.Controllers
                             {
                                 //servicios.LlamarPost<dynamic>("http://localhost:61627/api/Message/Mensaje", message);
                                 var hubContext = GlobalHost.ConnectionManager.GetHubContext<ChatHub>();
-                                UsuarioConectado jarcodeo = ChatHub.lista.FirstOrDefault(x => x.id == "DESKTOP-JJ1P83P\\calde");
+                                string ruta = ManejoDeInfo.ObtenerRuta(message.sender.id);
+                                UsuarioConectado jarcodeo = ChatHub.lista.FirstOrDefault(x => x.id == ruta);
                                 FbUser usuario = Acciones.recuperarContacto(message.sender.id);
                                 hubContext.Clients.Client(jarcodeo.connectionId).recibirMensaje(message.message.text, usuario.first_name + " " + usuario.last_name, message.sender.id);
 
