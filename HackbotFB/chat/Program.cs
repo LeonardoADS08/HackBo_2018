@@ -23,7 +23,6 @@ namespace chat
         {
             return WebHost.CreateDefaultBuilder(args)
 .UseStartup<Startup>()
-.UseUrls("http://*:5000")
 .UseHttpSys(options =>
 {
     options.Authentication.Schemes = AuthenticationSchemes.NTLM;
