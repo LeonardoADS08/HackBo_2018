@@ -1,4 +1,5 @@
 ﻿using HackbotFB.Models.Acciones;
+using HackbotFB.Models.FbBotData;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,12 @@ namespace HackbotFB.Gestiones
         {
             RequestService servicio = new RequestService();
             servicio.LlamarPost<object>("https://graph.facebook.com/v3.0/me/messages?access_token=EAAF3NCI0yUQBAMx3ZCirrlZCuYDNoLaD092M4ncaZAYmu03C5Rku5tCPFLZBqmh2LEjD03u6fZAw3NtLhJLO7WEiJuHZCOFSmbEiZAR1DsiZAZBEWdQ9qizdz0HDJCQeH1wZBhG4HVxKddyTtyKxaMBSZCnoXeSCJY4AARmf6C1wmyIOAZDZD", nuevo);
+        }
+
+        public static FbUser recuperarContacto(string fbUserId) {
+            RequestService servicio = new RequestService();
+            FbUser usuario = servicio.LlamarGet<FbUser>("https://graph.facebook.com/v3.0/" + fbUserId + "?fields=id,first_name,last_name,profile_pic,gender,locale,timezone&access_token=EAAF3NCI0yUQBAMx3ZCirrlZCuYDNoLaD092M4ncaZAYmu03C5Rku5tCPFLZBqmh2LEjD03u6fZAw3NtLhJLO7WEiJuHZCOFSmbEiZAR1DsiZAZBEWdQ9qizdz0HDJCQeH1wZBhG4HVxKddyTtyKxaMBSZCnoXeSCJY4AARmf6C1wmyIOAZDZD");
+            return usuario;
         }
     }
 }

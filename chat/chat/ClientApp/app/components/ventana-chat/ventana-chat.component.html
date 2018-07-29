@@ -1,5 +1,5 @@
 <div #contenedor style="height:80vh;width:100vh;border-color: black;border-style: solid;border-radius: 10px;overflow-y: scroll;">
-<ng-container *ngIf="mensajesService.personaSeleccionada.Mensajes">
+<ng-container *ngIf="mensajesService.personaSeleccionada">
     <ng-container *ngFor="let mensajes of mensajesService.personaSeleccionada.Mensajes">
         <div style="width: 100%">
                 <span [ngClass]="{'llegada':mensajes.tipo==='llegada','enviado':mensajes.tipo==='enviado'}">

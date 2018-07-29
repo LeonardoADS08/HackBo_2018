@@ -44,7 +44,7 @@ namespace HackbotFB
                 lista.Add(agregar);
             }
             else {
-                enLista.connectionId = Id;
+                enLista.connectionId = Context.ConnectionId;
             }           
         }
     }

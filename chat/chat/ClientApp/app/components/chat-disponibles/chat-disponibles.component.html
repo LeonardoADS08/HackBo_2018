@@ -4,11 +4,11 @@
       <li class="breadcrumb-item active" aria-current="page">personas</li>
     </ol>
   </nav>
-  <div *ngIf="mensajesService.listaMensajes">
+  <div *ngIf="mensajesService.listaMensajes.length!=0">
 
     <ul class="list-group">
       <ng-container *ngFor="let mensajes of mensajesService.listaMensajes">
-          <li  class="list-group-item" [ngClass]="{'active': mensajesService.personaSeleccionada.persona.conexion===mensajes.persona.conexion}" (click)="mensajesService.personaSeleccionada=mensajes">
+          <li *ngIf="mensajes" class="list-group-item" [ngClass]="{'active': mensajesService.personaSeleccionada.persona.conexion===mensajes.persona.conexion}" (click)="mensajesService.personaSeleccionada=mensajes">
               {{mensajes.persona.nombre}}
             </li>
       </ng-container>
