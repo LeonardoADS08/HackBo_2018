@@ -1,0 +1,15 @@
+<div #contenedor style="height:80vh;width:100vh;border-color: black;border-style: solid;border-radius: 10px;overflow-y: scroll;">
+<ng-container *ngIf="mensajesService.personaSeleccionada.Mensajes">
+    <ng-container *ngFor="let mensajes of mensajesService.personaSeleccionada.Mensajes">
+        <div style="width: 100%">
+                <span [ngClass]="{'llegada':mensajes.tipo==='llegada','enviado':mensajes.tipo==='enviado'}">
+                        {{mensajes.texto}}
+                </span>
+        </div>    
+    </ng-container >
+        
+</ng-container>
+    
+</div>
+<input #mensajeAenviar style="width:90vh"/>
+<button style="width:10vh" (click)="EnviarMensaje(mensajeAenviar,contenedor)">enviar</button>

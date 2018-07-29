@@ -9,14 +9,19 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
-
+import { ChatDisponiblesComponent } from './components/chat-disponibles/chat-disponibles.component';
+import { VentanaChatComponent } from './components/ventana-chat/ventana-chat.component';
+import { MensajesServiceService } from './services/mensajes-service.service';
+import { SignalRService } from './services/SignalR.service';
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        ChatDisponiblesComponent,
+        VentanaChatComponent
     ],
     imports: [
         CommonModule,
@@ -29,7 +34,8 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers: [MensajesServiceService, SignalRService]
 })
 export class AppModuleShared {
 }
