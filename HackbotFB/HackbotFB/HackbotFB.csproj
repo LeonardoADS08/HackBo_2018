@@ -187,6 +187,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\FbConnect\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DialogFlow\DialogFlow.csproj">
+      <Project>{b5fa437f-ae21-435b-9245-645ad89b5947}</Project>
+      <Name>DialogFlow</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
