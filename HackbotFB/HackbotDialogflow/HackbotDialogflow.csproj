@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10F3CB55-FA46-4D66-BF48-484C14CD8FDA}</ProjectGuid>
+    <ProjectGuid>{50A24909-55B8-48FA-8530-209FC7D2E3F0}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HackbotFB</RootNamespace>
-    <AssemblyName>HackbotFB</AssemblyName>
+    <RootNamespace>HackbotDialogflow</RootNamespace>
+    <AssemblyName>HackbotDialogflow</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -108,16 +108,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ConexionesController.cs" />
-    <Compile Include="Controllers\FbConnectController.cs" />
-    <Compile Include="Gestiones\Acciones.cs" />
-    <Compile Include="Gestiones\RequestService.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Acciones\MensajesTexto.cs" />
-    <Compile Include="Models\FbBotData\FbBotData.cs" />
-    <Compile Include="Models\FbBotData\FbUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FbConnect\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -147,9 +141,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55309</DevelopmentServerPort>
+          <DevelopmentServerPort>56150</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55309/</IISUrl>
+          <IISUrl>http://localhost:56150/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

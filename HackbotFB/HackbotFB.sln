@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackbotFB", "HackbotFB\HackbotFB.csproj", "{10F3CB55-FA46-4D66-BF48-484C14CD8FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackbotDialogflow", "HackbotDialogflow\HackbotDialogflow.csproj", "{50A24909-55B8-48FA-8530-209FC7D2E3F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{10F3CB55-FA46-4D66-BF48-484C14CD8FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10F3CB55-FA46-4D66-BF48-484C14CD8FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10F3CB55-FA46-4D66-BF48-484C14CD8FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A24909-55B8-48FA-8530-209FC7D2E3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
