@@ -1,5 +1,5 @@
 .llegada{
-
+    float:right;
     background-color: blue;
     color:white;
     border-radius: 10px;
@@ -9,10 +9,12 @@
     margin-top:10px;
 }
 .enviado{
+    clear:both;
+    float:left;
 border-radius: 10px;
 padding-right: 10px;
 padding-left: 10px;
 background:lightgray; 
-margin-top:10px;
+margin-bottom:5px;
 
 }
