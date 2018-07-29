@@ -12,7 +12,7 @@ export class SignalRService {
 
         var s = this;
         this.conexion = $.connection.chatHub;
-        $.connection.hub.url = "http://localhost:55309/signalr/hubs";
+        $.connection.hub.url = "http://4fdd6e35.ngrok.io/signalr/hubs";
         $.connection.hub.start()
             .done(function () {
                 console.log('Now connected, connection ID=' + $.connection.hub.id);

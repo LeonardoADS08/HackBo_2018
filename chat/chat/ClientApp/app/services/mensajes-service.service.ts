@@ -10,17 +10,17 @@ export class MensajesServiceService {
     let i;
     this.listaMensajes=new Array<MensajesDePersona>();
   
-    for(i=0;i<20;i++)
-    {
+    //for(i=0;i<20;i++)
+    //{
       
-      this.listaMensajes.push({persona:{conexion:""+i,nombre:"Persona"+i},Mensajes:new Array<Mensaje>()});
+    //  this.listaMensajes.push({persona:{conexion:""+i,nombre:"Persona"+i},Mensajes:new Array<Mensaje>()});
       
-      this.Rellenar(this.listaMensajes[i],100);
-      if(i==0)
-      {
-        this.personaSeleccionada=this.listaMensajes[0];
-      }
-    }
+    //  this.Rellenar(this.listaMensajes[i],100);
+    //  if(i==0)
+    //  {
+    //    this.personaSeleccionada=this.listaMensajes[0];
+    //  }
+    //}
     //console.log(this.personaSeleccionada)
     //console.log(this.listaMensajes);
    }
