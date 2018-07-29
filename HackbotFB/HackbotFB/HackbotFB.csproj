@@ -162,6 +162,7 @@
     <Compile Include="Models\Acciones\MensajesTexto.cs" />
     <Compile Include="Models\FbBotData\FbBotData.cs" />
     <Compile Include="Models\FbBotData\FbUser.cs" />
+    <Compile Include="Models\Hub\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -202,6 +203,8 @@
           <DevelopmentServerPort>55309</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:55309/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:55309/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

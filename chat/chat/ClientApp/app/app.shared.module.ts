@@ -13,6 +13,7 @@ import { ChatDisponiblesComponent } from './components/chat-disponibles/chat-dis
 import { VentanaChatComponent } from './components/ventana-chat/ventana-chat.component';
 import { MensajesServiceService } from './services/mensajes-service.service';
 import { SignalRService } from './services/SignalR.service';
+
 @NgModule({
     declarations: [
         AppComponent,

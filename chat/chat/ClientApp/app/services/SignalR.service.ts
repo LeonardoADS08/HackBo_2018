@@ -13,8 +13,19 @@ export class SignalRService {
             .done(function () { console.log('Now connected, connection ID=' + $.connection.hub.id); })
             .fail(function (sssss:any) { console.log('Could not Connect!');console.log(sssss) });
     }
-    mandarAlgo() {
-        this.conexion.invoke("Send").catch((err:any) => console.error(err.toString()));
+    mandarAlgo(id: string, mensaje: string) {
+        id = "2119200008150269";
+        console.log(mensaje);
+        this.conexion.invoke("Send", id, mensaje).catch((err: any) => console.error(err.toString()));
+        //this.conexion.invoke("Send","aaaaaaa","aaaaaaa").catch((err: any) => console.error(err.toString()));
     }
-
+    mandarIdAuth(auth:string) {
+        this.conexion.invoke("RecibirConexion", auth);
+    }
+    desconexion() {
+        this.conexion.invoke("desconexion", "aaaa");
+    }
+    pararSignal() {
+        $.connection.hub.stop();
+    }
 }
